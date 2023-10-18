@@ -1,0 +1,21 @@
+[package]
+name = "install-me"
+version = "0.1.0"
+edition = "2021"
+authors = ["flatig"]
+license = "MIT OR Apache-2.0"
+keywords = ["Windows", "Tool", "Installer", "Fast", "Little"]
+description = "A tool can easily make your app installed on Windows"
+
+[profile.release]
+strip = "symbols"
+lto = "fat"
+overflow-checks = false
+debug-assertions = false
+
+
+[dependencies]
+fltk = { version = "^1.4", features = ["fltk-bundled"] }
+toml = "^0.8"
+thiserror = "^1.0"
+serde = {version = "^1.0", features = ["derive"] }
